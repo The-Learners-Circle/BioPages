@@ -9,11 +9,14 @@
             margin: 0;
             padding: 0;
             display: grid;
+            grid-template-rows: 1fr;
             
+            width: 100vw;
+            box-sizing: border-box;
         }
         header{
             width: 100%;
-            height: 100px;
+            min-height: 100px;
             background-color: black;
             display: grid;
             
@@ -22,18 +25,18 @@
             
             width: 50%;
             margin: auto auto;
-            
+            display:grid;
         
         }
         ul{
             padding: 0;
-            
             width: 75%;
             margin: 0 auto;
             display: flex;
             justify-content: center;
             list-style: none;
             flex-direction: row;
+            visibility: visible;
         }
         li{
             
@@ -49,7 +52,7 @@
         }
         h1{
             padding: 0;
-            display:inline-block;
+            
         
         }
         .intro{
@@ -71,41 +74,70 @@
         }
         
         .myBio{
-            width: 50%;
-            
+            width: 30%;
+            line-height: 2;
             padding: 20px;
         }
         .centerContainer{
+            box-sizing: border-box;
             display: flex;
-            width: 75%;
+            width: 85%;
             margin: 40px auto;
-            
             align-items: center;
         }
+        .title{
+            display: flex;
+            flex-direction: column;
+        }
+        .menu{
+            visibility: hidden;
+            margin: 0 auto;
+            
+        }
         @media(max-width: 800px){
+            .menu{
+                visibility: visible;
+            }
+            #menuList{
+                display:none;
+                flex-direction:column;
+                margin-bottom: 9vw;
+                
+            }
+           
             .centerContainer{
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                width: 90%
 
             }
             .myBio{
-                width:100%;
+                width:90%;
+                line-height: 1.5;
             }
-            .img{
+            img{
+                margin: 10vw;
                 min-width:200px;
             }
-            .h1{
+            .title{
                 padding: 0px;
-                margin: 0px;
+                margin: 0 auto;
+                display: grid;
+                
             }
+            h1{
+                margin: 0 auto;
+            }
+
+
         }
         </style>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <a class ='menu' id="menu" href="#" onclick="toggleFunction()">menu</a>
+            <ul id="menuList">
                 <li><a href="LandingPage.html">home</a></li>
                 <li><a href="kingjofr.html">kingjofr</a></li>
                 <li><a heref="#">saswata</a></li>
@@ -126,5 +158,15 @@
             and League of Legends.
         </p>
     </div>
+    <script type="text/javascript">
+        function toggleFunction() {
+            var x = document.getElementById("menuList");
+            if (x.style.display == "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+             }
+        }
+    </script>
 </body>
 </html>
